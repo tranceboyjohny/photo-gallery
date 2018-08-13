@@ -1,0 +1,66 @@
+<!-- 
+
+<div style="text-align:center">
+  
+  <img width="800" alt="Angular Logo" [src]=imageSrc >
+</div>
+
+<div *ngIf="loading">
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</div>
+
+<span *ngFor="let photo of allPhotos; let i = index">
+  <span *ngIf="i < 10">
+    <img width="200" height="200" [src]="getFullPath(photo.relativePath)" />
+  </span>
+</span> 
+
+
+
+<button mat-button (click)="getRandomPhoto()">Show Random Photo</button>
+<button mat-button>Show Gallery</button> -->
+
+<mat-toolbar>
+    <mat-icon style="padding-right: 1rem">photo</mat-icon>
+    <span>Oksana & Johny's Wedding Photos</span>
+  
+    <span class="fill-remaining"></span>
+  
+    <!--todo-->
+    <mat-icon>info</mat-icon>
+  </mat-toolbar>
+  
+  <div fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="center">
+  
+    <mat-card fxFlex="80" style="margin: 2rem">
+      <mat-card-title-group>
+        <mat-card-title>All Photos</mat-card-title>
+        <mat-card-subtitle>Pier A - Harbor House (07/07/2018)</mat-card-subtitle>
+      </mat-card-title-group>
+  
+      <mat-card-content>
+        <ngx-image-gallery
+          #ngxImageGallery
+          [images]="images"
+          [conf]="conf"
+          (onOpen)="galleryOpened($event)"
+          (onClose)="galleryClosed()"
+          (onImageClicked)="galleryImageClicked($event)"
+          (onImageChange)="galleryImageChanged($event)"
+          (onDelete)="deleteImage($event)">
+        </ngx-image-gallery>
+      </mat-card-content>
+  
+      <div layout-fill layout-align="center center">
+        <button mat-button (click)="getPhotoAtIndex(0)">Show First</button>
+        <button mat-button (click)="getRandomPhoto()">Show Random Photo</button>
+        <button mat-button (click)="getPhotoAtIndex(398)">Show Last</button>
+      </div>
+      
+      <br/><br/><br/>
+      <mat-card-footer>
+      </mat-card-footer>
+    </mat-card>
+  </div>
