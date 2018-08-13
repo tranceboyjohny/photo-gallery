@@ -6,14 +6,13 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class KeysPipe implements PipeTransform {
 
   transform(value: any, args: string[]): any {
-    let keys = [];
+    const keys = [];
     if (typeof value === 'object') {
       // tslint:disable-next-line:forin
-      for (let key in value) {
+      for (const key in value) {
         keys.push({key: key, value: value[key]});
       }
     }
     return keys;
   }
-
 }
