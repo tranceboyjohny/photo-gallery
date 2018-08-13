@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/19f0925d-1701-43fd-b8a2-5c917f3d4656/resourceGroups/photo-gallery/providers/Microsoft.Web/sites/wedding-photo-gallery",
+    "appService.deploySubpath": "dist"
+}

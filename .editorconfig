@@ -1,4 +1,8 @@
-# Editor configuration, see http://editorconfig.org
+
+
+// Enable telemetry collection with Application Insights
+var ai = require('applicationinsights');
+ai.setup(process.env.APPLICATIONINSIGHTSKEY || '33ca76fe-9fc3-4271-9939-63416de20c32').start();# Editor configuration, see http://editorconfig.org
 root = true
 
 [*]
