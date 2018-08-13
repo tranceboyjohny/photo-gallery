@@ -13,7 +13,7 @@ import { GALLERY_IMAGE } from '../../node_modules/ngx-image-gallery';
 export class PhotosService implements OnInit {
 
   // tslint:disable-next-line:no-inferrable-types
-  api: string = '../api/photos/photos.json';
+  api: string = 'api/photos/photos.json';
 
   allPhotos: GALLERY_IMAGE[];
 
